@@ -4,6 +4,7 @@
 
     <item
         android:id="@+id/academicCalendar"
+        android:icon="@drawable/acadcalendar"
         android:title="Academic Calendar" />
 
     <item
@@ -13,22 +14,22 @@
 
     <item
         android:id="@+id/news"
-        android:icon="@drawable/gallery"
+        android:icon="@drawable/newsicon"
         android:title="News" />
 
     <item
         android:id="@+id/results"
-        android:icon="@drawable/results"
+        android:icon="@drawable/result"
         android:title="Results" />
 
     <item
         android:id="@+id/website"
-        android:icon="@drawable/results"
+        android:icon="@drawable/galgotialogo"
         android:title="Website" />
 
     <item
         android:id="@+id/emailUs"
-        android:icon="@drawable/developer"
+        android:icon="@drawable/email"
         android:title="Email us" />
 
 
