@@ -1,27 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
+
     <item
-        android:id="@+id/home"
-        android:icon="@drawable/college"
-        android:title="Home" />
+        android:id="@+id/academicCalendar"
+        android:icon="@drawable/ebook"
+        android:title="Academic Calendar" />
 
     <item
         android:id="@+id/ebook"
         android:icon="@drawable/ebook"
-        android:title="Ebook" />
-    <item
-        android:id="@+id/faculty"
-        android:icon="@drawable/faculty"
-        android:title="Faculty" />
+        android:title="Ebooks" />
+
     <item
         android:id="@+id/gallery"
         android:icon="@drawable/gallery"
-        android:title="Gallery" />
+        android:title="News" />
+
+    <item
+        android:id="@+id/results"
+        android:icon="@drawable/results"
+        android:title="Results" />
 
     <item
         android:id="@+id/developer"
         android:icon="@drawable/developer"
         android:title="Website" />
+
+    <item
+        android:id="@+id/email"
+        android:icon="@drawable/developer"
+        android:title="Email" />
+
+    <item
+        android:id="@+id/call"
+        android:icon="@drawable/developer"
+        android:title="Call" />
+
 
 </menu>

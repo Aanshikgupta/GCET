@@ -16,6 +16,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import com.example.gcet.UI.About.AboutFragment;
+import com.example.gcet.UI.Ebooks.EbooksFragment;
 import com.example.gcet.UI.Faculty.FacultyFragment;
 import com.example.gcet.UI.Gallery.GalleryFragment;
 import com.example.gcet.UI.Home.HomeFragment;
@@ -70,6 +71,11 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                break;
            case R.id.developer:
                getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout,new AboutFragment()).commit();
+               break;
+           case R.id.academicCalendar:
+               break;
+           case R.id.ebook:
+               getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout,new EbooksFragment()).commit();
                break;
 
 

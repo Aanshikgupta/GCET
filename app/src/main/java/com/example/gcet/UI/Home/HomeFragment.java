@@ -7,8 +7,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
-import com.example.gcet.Adapter.SliderAdapter;
 import com.example.gcet.R;
 import com.smarteist.autoimageslider.SliderView;
 
@@ -21,12 +21,18 @@ public class HomeFragment extends Fragment {
     }
 
     private SliderView slider;
+    private ImageView mapView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_home, container, false);
+        setSlider(view);
+        return view;
+    }
+
+    private void setSlider(View view) {
         slider = view.findViewById(R.id.slider);
         List<Integer> images = new ArrayList<>();
         images.add(R.drawable.gcetimg);
@@ -35,7 +41,7 @@ public class HomeFragment extends Fragment {
         images.add(R.drawable.gcetimg4);
         SliderAdapter adapter = new SliderAdapter(this, images);
         slider.setSliderAdapter(adapter);
-
-        return view;
     }
+
+
 }

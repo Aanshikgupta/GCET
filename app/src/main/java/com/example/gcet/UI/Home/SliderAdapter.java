@@ -1,4 +1,4 @@
-package com.example.gcet.Adapter;
+package com.example.gcet.UI.Home;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.example.gcet.R;
-import com.example.gcet.UI.Home.HomeFragment;
 import com.smarteist.autoimageslider.SliderViewAdapter;
 
 import java.util.List;

@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="bold" tools:ignore="ReferenceType">@font/muktabold</string>
+    <string name="light" tools:ignore="ReferenceType">@font/muktalight</string>
+    <string name="regular" tools:ignore="ReferenceType">@font/muktaregular</string>
     <string name="start">start</string>
     <string name="close">close</string>
+
+    <string name="collegeinfostring">Galgotias College of Engineering &amp; Technology are approved by AICTE, Ministry of HRD, Government of India and affiliated to Dr. A.P.J. Abdul Kalam Technical University, Lucknow formerly Uttar Pradesh Technical University. Galgotias College of Engineering &amp; Technology, established in 2000, synergizes theoretical knowledge and practical skills to promote all round professional competence. Galgotias College of Engineering &amp; Technology has acquired a unique status in UP, the NCR region and the country as a whole by breaking new grounds in producing professionals of national and international acclaim and has been recognized as one of the top ranking institutions imparting high quality education.</string>
+    <string name="college_contact_details">1, Knowledge Park-II, Greater Noida, Uttar Pradesh, India\n+91-120-4370000\nadmissions@galgotiacollege.edu</string>
+
 </resources>
