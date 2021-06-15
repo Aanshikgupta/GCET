@@ -3,6 +3,7 @@ package com.example.gcet.UI.Faculty;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -10,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.gcet.R;
@@ -24,6 +26,8 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
+import static android.view.View.GONE;
+
 public class FacultyFragment extends Fragment {
 
     private List<Faculty> directorList, csList, eiList,eceList,itList, eeList, eeeList, ceList, meList;
@@ -32,6 +36,7 @@ public class FacultyFragment extends Fragment {
     private FacultyAdapter facultyAdapter;
     private DatabaseReference databaseReference, tempRef;
     private View view;
+    private ProgressBar progressBar;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -39,6 +44,7 @@ public class FacultyFragment extends Fragment {
 
         view= inflater.inflate(R.layout.fragment_faculty, container, false);
         setView();
+        progressBar.setVisibility(View.VISIBLE);
         setAdapters();
         setDirector();
         setCSE();
@@ -49,12 +55,14 @@ public class FacultyFragment extends Fragment {
         setEI();
         setME();
         setCE();
-
+        progressBar.setVisibility(GONE);
 
         return view;
     }
 
     private void setView() {
+        progressBar=((AppCompatActivity) getActivity()).findViewById(R.id.pbmain);
+
         //No Data Layout setView
         directorNoData = view.findViewById(R.id.directorNoData);
         csNoData = view.findViewById(R.id.CSENoData);
@@ -95,7 +103,7 @@ public class FacultyFragment extends Fragment {
                 ceList = new ArrayList<>();
                 if (!snapshot.exists()) {
                     ceNoData.setVisibility(View.VISIBLE);
-                    ceRecyclerView.setVisibility(View.GONE);
+                    ceRecyclerView.setVisibility(GONE);
                 } else {
                     for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                         ceList.add(dataSnapshot.getValue(Faculty.class));
@@ -103,7 +111,7 @@ public class FacultyFragment extends Fragment {
                     facultyAdapter = new FacultyAdapter(view.getContext(), ceList);
                     ceRecyclerView.setAdapter(facultyAdapter);
                     ceRecyclerView.setVisibility(View.VISIBLE);
-                    ceNoData.setVisibility(View.GONE);
+                    ceNoData.setVisibility(GONE);
                 }
             }
 
@@ -125,7 +133,7 @@ public class FacultyFragment extends Fragment {
                 meList = new ArrayList<>();
                 if (!snapshot.exists()) {
                     meNoData.setVisibility(View.VISIBLE);
-                    meRecyclerView.setVisibility(View.GONE);
+                    meRecyclerView.setVisibility(GONE);
                 } else {
                     for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                         meList.add(dataSnapshot.getValue(Faculty.class));
@@ -133,7 +141,7 @@ public class FacultyFragment extends Fragment {
                     facultyAdapter = new FacultyAdapter(view.getContext(), meList);
                     meRecyclerView.setAdapter(facultyAdapter);
                     meRecyclerView.setVisibility(View.VISIBLE);
-                    meNoData.setVisibility(View.GONE);
+                    meNoData.setVisibility(GONE);
                 }
             }
 
@@ -156,7 +164,7 @@ public class FacultyFragment extends Fragment {
                 eeeList = new ArrayList<>();
                 if (!snapshot.exists()) {
                     eeeNoData.setVisibility(View.VISIBLE);
-                    eeeRecyclerView.setVisibility(View.GONE);
+                    eeeRecyclerView.setVisibility(GONE);
                 } else {
                     for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                         eeeList.add(dataSnapshot.getValue(Faculty.class));
@@ -164,7 +172,7 @@ public class FacultyFragment extends Fragment {
                     facultyAdapter = new FacultyAdapter(view.getContext(), eeeList);
                     eeeRecyclerView.setAdapter(facultyAdapter);
                     eeeRecyclerView.setVisibility(View.VISIBLE);
-                    eeeNoData.setVisibility(View.GONE);
+                    eeeNoData.setVisibility(GONE);
                 }
             }
 
@@ -187,7 +195,7 @@ public class FacultyFragment extends Fragment {
                 eceList = new ArrayList<>();
                 if (!snapshot.exists()) {
                     eceNoData.setVisibility(View.VISIBLE);
-                    eceRecyclerView.setVisibility(View.GONE);
+                    eceRecyclerView.setVisibility(GONE);
                 } else {
                     for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                         eceList.add(dataSnapshot.getValue(Faculty.class));
@@ -195,7 +203,7 @@ public class FacultyFragment extends Fragment {
                     facultyAdapter = new FacultyAdapter(view.getContext(), eeeList);
                     eceRecyclerView.setAdapter(facultyAdapter);
                     eceRecyclerView.setVisibility(View.VISIBLE);
-                    eceNoData.setVisibility(View.GONE);
+                    eceNoData.setVisibility(GONE);
                 }
             }
 
@@ -219,7 +227,7 @@ public class FacultyFragment extends Fragment {
                 eiList = new ArrayList<>();
                 if (!snapshot.exists()) {
                     eiNoData.setVisibility(View.VISIBLE);
-                    eiRecyclerView.setVisibility(View.GONE);
+                    eiRecyclerView.setVisibility(GONE);
                 } else {
                     for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                         eiList.add(dataSnapshot.getValue(Faculty.class));
@@ -227,7 +235,7 @@ public class FacultyFragment extends Fragment {
                     facultyAdapter = new FacultyAdapter(view.getContext(), eiList);
                     eiRecyclerView.setAdapter(facultyAdapter);
                     eiRecyclerView.setVisibility(View.VISIBLE);
-                    eiNoData.setVisibility(View.GONE);
+                    eiNoData.setVisibility(GONE);
                 }
             }
 
@@ -250,7 +258,7 @@ public class FacultyFragment extends Fragment {
                 eeList = new ArrayList<>();
                 if (!snapshot.exists()) {
                     eeNoData.setVisibility(View.VISIBLE);
-                    eeRecyclerView.setVisibility(View.GONE);
+                    eeRecyclerView.setVisibility(GONE);
                 } else {
                     for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                         eeList.add(dataSnapshot.getValue(Faculty.class));
@@ -258,7 +266,7 @@ public class FacultyFragment extends Fragment {
                     facultyAdapter = new FacultyAdapter(view.getContext(), eeList);
                     eeRecyclerView.setAdapter(facultyAdapter);
                     eeRecyclerView.setVisibility(View.VISIBLE);
-                    eeNoData.setVisibility(View.GONE);
+                    eeNoData.setVisibility(GONE);
                 }
             }
 
@@ -281,7 +289,7 @@ public class FacultyFragment extends Fragment {
                 itList = new ArrayList<>();
                 if (!snapshot.exists()) {
                     itNoData.setVisibility(View.VISIBLE);
-                    itRecyclerView.setVisibility(View.GONE);
+                    itRecyclerView.setVisibility(GONE);
                 } else {
                     for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                         itList.add(dataSnapshot.getValue(Faculty.class));
@@ -289,7 +297,7 @@ public class FacultyFragment extends Fragment {
                     facultyAdapter = new FacultyAdapter(view.getContext(), itList);
                     itRecyclerView.setAdapter(facultyAdapter);
                     itRecyclerView.setVisibility(View.VISIBLE);
-                    itNoData.setVisibility(View.GONE);
+                    itNoData.setVisibility(GONE);
                 }
             }
 
@@ -311,7 +319,7 @@ public class FacultyFragment extends Fragment {
                 csList = new ArrayList<>();
                 if (!snapshot.exists()) {
                     csNoData.setVisibility(View.VISIBLE);
-                    csRecyclerView.setVisibility(View.GONE);
+                    csRecyclerView.setVisibility(GONE);
                 } else {
                     for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                         csList.add(dataSnapshot.getValue(Faculty.class));
@@ -319,7 +327,7 @@ public class FacultyFragment extends Fragment {
                     facultyAdapter = new FacultyAdapter(view.getContext(), csList);
                     csRecyclerView.setAdapter(facultyAdapter);
                     csRecyclerView.setVisibility(View.VISIBLE);
-                    csNoData.setVisibility(View.GONE);
+                    csNoData.setVisibility(GONE);
                 }
             }
 
@@ -343,7 +351,7 @@ public class FacultyFragment extends Fragment {
                 directorList = new ArrayList<>();
                 if (!snapshot.exists()) {
                     directorNoData.setVisibility(View.VISIBLE);
-                    directorRecyclerView.setVisibility(View.GONE);
+                    directorRecyclerView.setVisibility(GONE);
                 } else {
                     for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                         directorList.add(dataSnapshot.getValue(Faculty.class));
@@ -351,7 +359,7 @@ public class FacultyFragment extends Fragment {
                     facultyAdapter = new FacultyAdapter(view.getContext(), directorList);
                     directorRecyclerView.setAdapter(facultyAdapter);
                     directorRecyclerView.setVisibility(View.VISIBLE);
-                    directorNoData.setVisibility(View.GONE);
+                    directorNoData.setVisibility(GONE);
                 }
             }
 

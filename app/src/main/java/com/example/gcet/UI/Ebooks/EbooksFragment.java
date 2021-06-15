@@ -3,6 +3,7 @@ package com.example.gcet.UI.Ebooks;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -10,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.gcet.R;
@@ -31,6 +33,7 @@ public class EbooksFragment extends Fragment {
     private RecyclerView ebookRecyclerView;
     private List<Ebook> ebookList;
     private EbookAdapter adapter;
+    private ProgressBar progressBar;
 
 
     public EbooksFragment() {
@@ -42,6 +45,8 @@ public class EbooksFragment extends Fragment {
         view= inflater.inflate(R.layout.fragment_ebooks, container, false);
 
         ebookRecyclerView=view.findViewById(R.id.ebookRecyclerView);
+        progressBar=((AppCompatActivity) getActivity()).findViewById(R.id.pbmain);
+        progressBar.setVisibility(View.VISIBLE);
         setFirebase();
         ebookRecyclerView.setHasFixedSize(true);
         ebookRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -68,11 +73,13 @@ public class EbooksFragment extends Fragment {
                 adapter=new EbookAdapter(getContext(),ebookList);
                 adapter.notifyDataSetChanged();
                 ebookRecyclerView.setAdapter(adapter);
+                progressBar.setVisibility(View.GONE);
             }
 
             @Override
             public void onCancelled(@NonNull @NotNull DatabaseError error) {
                 Toast.makeText(getContext(),"Something went wrong, please try again!",Toast.LENGTH_LONG).show();
+                progressBar.setVisibility(View.GONE);
             }
         });
 

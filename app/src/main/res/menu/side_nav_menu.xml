@@ -4,16 +4,15 @@
 
     <item
         android:id="@+id/academicCalendar"
-        android:icon="@drawable/ebook"
         android:title="Academic Calendar" />
 
     <item
-        android:id="@+id/ebook"
+        android:id="@+id/ebooks"
         android:icon="@drawable/ebook"
         android:title="Ebooks" />
 
     <item
-        android:id="@+id/gallery"
+        android:id="@+id/news"
         android:icon="@drawable/gallery"
         android:title="News" />
 
@@ -23,19 +22,16 @@
         android:title="Results" />
 
     <item
-        android:id="@+id/developer"
-        android:icon="@drawable/developer"
+        android:id="@+id/website"
+        android:icon="@drawable/results"
         android:title="Website" />
 
     <item
-        android:id="@+id/email"
+        android:id="@+id/emailUs"
         android:icon="@drawable/developer"
-        android:title="Email" />
+        android:title="Email us" />
 
-    <item
-        android:id="@+id/call"
-        android:icon="@drawable/developer"
-        android:title="Call" />
+
 
 
 </menu>

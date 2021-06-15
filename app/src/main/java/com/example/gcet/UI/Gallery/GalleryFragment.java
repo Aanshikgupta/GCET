@@ -3,6 +3,7 @@ package com.example.gcet.UI.Gallery;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -12,6 +13,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.gcet.R;
@@ -33,6 +35,7 @@ public class GalleryFragment extends Fragment {
     private List<Gallery> freshersList,convocationList, unifestList;
     private DatabaseReference databaseReference,ref;
     private GalleryAdapter adapter;
+    private ProgressBar progressBar;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -40,10 +43,13 @@ public class GalleryFragment extends Fragment {
 
         view= inflater.inflate(R.layout.fragment_gallery, container, false);
         setFirebase();
+        progressBar=((AppCompatActivity) getActivity()).findViewById(R.id.pbmain);
+        progressBar.setVisibility(View.VISIBLE);
         setRecyclerView();
         getFreshersDayData();
         getConvocation();
         getUnifest();
+        progressBar.setVisibility(View.GONE);
         return view;
     }
 

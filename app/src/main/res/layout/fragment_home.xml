@@ -225,10 +225,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="8dp"
-                android:layout_marginVertical="10dp"
+                android:layout_marginVertical="20dp"
                 android:lineSpacingExtra="1dp"
                 android:text="@string/college_contact_details"
                 android:textSize="18sp" />
+
+            <ImageView
+                android:layout_marginVertical="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/gcetmap"
+                android:layout_marginHorizontal="10dp"
+                android:id="@+id/map"/>
 
 
 
